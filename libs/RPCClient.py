@@ -1,6 +1,5 @@
 import xmlrpc.client
 
-
 class RPCClient:
     def __init__(self):
         self.server_config = None
