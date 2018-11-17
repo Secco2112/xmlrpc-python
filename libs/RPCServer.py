@@ -1,9 +1,7 @@
 from xmlrpc.server import SimpleXMLRPCServer
-import threading
 
-class RPCServer(threading.Thread):
+class RPCServer:
     def __init__(self):
-        threading.Thread.__init__(self)
         self.server_config = None
         self.server = None
         self.functions_list = {}
@@ -14,7 +12,7 @@ class RPCServer(threading.Thread):
         print("O servidor RPC está rodando na porta %s..." %(self.server_config[1]))
         return self
 
-    def run(self):
+    def start(self):
         self.server.serve_forever()
         return self
 
