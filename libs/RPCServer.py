@@ -11,7 +11,7 @@ class RPCServer(threading.Thread):
     def connect(self, host="localhost", port=12345):
         self.server_config = (host, port)
         self.server = SimpleXMLRPCServer(self.server_config)
-        print("O servidor RPC está rodando na porta %s..." %self.server_config[1])
+        print("O servidor RPC está rodando na porta %s..." %(self.server_config[1]))
         return self
 
     def run(self):
