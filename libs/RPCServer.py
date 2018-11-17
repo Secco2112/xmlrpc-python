@@ -27,3 +27,7 @@ class RPCServer(threading.Thread):
 
     def call(self, o, name, params=[]):
         getattr(o, name)(params)
+
+    def get_function(self, function_name):
+        if self.functions_list[function_name]:
+            return self.functions_list[function_name]
